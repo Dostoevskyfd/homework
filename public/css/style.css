@@ -1,0 +1,120 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}  
+body{
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+}
+.header{
+    display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  background-color: #777777;
+  padding: 30px 40px;
+}
+.logotip{
+    color: white;
+    font-size: 20px;
+}
+.menu{
+    flex-direction: row;
+    
+}
+
+.nav ul{
+    display: flex;
+list-style: none;
+justify-content: space-between;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.copyImg{
+    width: 30px;
+    height: 30px;
+}
+.nameUsers_me-and_year{
+    display: flex;
+    padding: 5px 10px;
+}
+
+
+.block
+{
+    display: flex;
+    justify-content: center;
+    margin: 70px 30px;
+}
+.fish-txt
+{
+    
+    width: 448px;
+    height: 144px;
+}
+.random_img{
+    width: 350px;
+    height: 300px;
+    margin-left: 20px;
+}
+
+/*подвал*/
+.footer{
+    background-color: #777777;
+    
+    position:fixed;
+   left:0px;
+   bottom:0px;
+   height:50px;
+   width:100%;
+}
+.grup_footer{
+    display: flex;
+    padding: 10px 40px;
+}
+.me{
+    font-size: 20px;
+    color: white;
+}
+.year{
+    font-size: 20px;
+    color: white;
+}
+
+.main{
+    display: flex;
+justify-content: center;
+}
+.cards{
+    margin-top: 100px;
+    
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-repeat: no-repeat; 
+}
+.one-card{
+    margin-top: 20px;
+    display: flex;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+border-radius: 5px;
+justify-content: center;
+}
+.card-txt{
+    padding: 50px 10px;
+}
+.card-img{
+    padding: 30px 10px;
+}
+.img-crd{
+    width: 150px;
+height: 150px;
+}
