@@ -1,4 +1,4 @@
-<!--@extends('app.layouts')
+@extends('layouts.main')
 @section('contnet')
 <form  action="{{ route('reports.update', $reports->id) }}" method="POST">
 @csrf
@@ -15,4 +15,4 @@
         <button type="submit" class="border-2">Обновить</button>
     </form>
 
-@endsection()-->
+@endsection()
