@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reports', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
             $table->string('number');
-            $table->string('description');
-            $table->timestamps();
+            $table->string('description')->nullable();
+            $table->foreignId('statuses_id')->nullable()->index();
+            $table->foreignId('users_id')->nullable()->index();
+            $table->timestamps(); 
         });
     }
 

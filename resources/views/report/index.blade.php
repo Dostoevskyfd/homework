@@ -4,7 +4,7 @@
 @foreach ($reports as $report)
 
 <div class="flex flex-wrap pt-5 ">
-   <div class="block max-w-sm p-6 bg-white border border-white-200 rounded-lg shadow hover:bg-white-100 dark:bg-white-800 dark:border-white-700 ">
+   <div class="block max-w-sm p-6 bg-white border border-white-200 rounded-lg shadow hover:bg-white-100 ">
    <div>
    <p class=" "> 
         <a href="{{route('report.index', $report->id )}}">
