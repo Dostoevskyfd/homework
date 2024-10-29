@@ -3,44 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Reports;
+use App\Models\Report;
 use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
     public function index(){
-        $reports= Reports::all();
+        $reports= Report::all();
         return view('report.index', compact('reports'));
     }
 
-    public function destroy(Reports $report){
+    public function destroy(Report $report){
         $report -> delete();
         return redirect()->back();
     }
 
-    public function store(Request $request, Reports $reports){
+    public function store(Request $request, Report $report){
         $data = $request -> validate([
           'number' => 'integer',
           'description' => 'string',
         ]);
       
-        $reports -> create($data);
+        $report -> create($data);
         return redirect()->back();
         
       }
 
-      public function show(Reports $reports){
-        return view('report.show', compact('reports'));
+      public function show(Report $report){
+        return view('report.show', compact('report'));
         
       }  
   
-    public function update(Request $request, Reports $reports){
+    public function update(Request $request, Report $report){
         $data = $request -> validate([
           'number' => 'integer',
           'description' => 'string',
         ]);
       
-        $reports -> update($data);
+        $report -> update($data);
         return redirect()->back();
         
       }

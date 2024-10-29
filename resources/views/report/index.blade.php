@@ -33,7 +33,7 @@
 <div class="container">
     <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Создать новый отчет</h1>
 
-    <form method="POST" action="{{ route('reports.store') }}">
+    <form method="POST" action="{{ route('report.store') }}">
         @csrf
         <div class="mb-4">
         <p class="block text-gray-700 font-bold mb-2">Номер:</p>

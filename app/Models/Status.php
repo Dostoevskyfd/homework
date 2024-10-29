@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Reports;
 
-class statuses extends Model
+class status extends Model
 {
     use HasFactory;
 
