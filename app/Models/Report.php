@@ -9,7 +9,7 @@ use App\Models\Statuses;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class report extends Model
+class Report extends Model
 {
     use HasFactory, SoftDeletes;
     protected $guarded = [];
