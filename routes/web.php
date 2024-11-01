@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\MainController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\Admin;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,5 +29,8 @@ Route::post('/reports', [ReportController::class,'store']) -> name('report.store
 Route::get('/reports/{report}', [ReportController::class, 'show'])->name('report.show');
 Route::put('/reports/{report}', [ReportController::class,'update'])->name('report.update');
 });
+
+Route::middleware(Admin::class)->group(function(){
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');});
 
 require __DIR__.'/auth.php';

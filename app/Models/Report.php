@@ -14,7 +14,7 @@ class Report extends Model
     use HasFactory, SoftDeletes;
     protected $guarded = [];
 
-    public function statuses():BelongsTo
+    public function status():BelongsTo
     {
         return $this->belongsTo(Statuses::class);
     }
