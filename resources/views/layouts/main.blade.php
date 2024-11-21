@@ -14,6 +14,7 @@
     </div>
     </header>
     <main>
+        
         @yield('contnet')
     </main>
     <footer class="flex flex-row justify-between flex-wrap bg-stone-600 px-8 left-0 bottom-0 fixed w-full h-50">

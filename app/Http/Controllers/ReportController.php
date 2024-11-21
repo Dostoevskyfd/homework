@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Report;
+use Illuminate\Support\Facades\Auth;;
 use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
     public function index(){
-        $reports= Report::all();
+        $reports= Report::where('user_id', Auth::user()->id)->get();
         return view('report.index', compact('reports'));
     }
 

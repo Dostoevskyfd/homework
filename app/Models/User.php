@@ -25,6 +25,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'middlename',
+        'fname',
+        'login',
+        'tel',
         'email',
         'password',
     ];
@@ -54,5 +58,9 @@ class User extends Authenticatable
     public function report():HasMany
     {
         return $this->hasMany(Reports::class);
+    }
+
+    public function fullName(){
+        return $this->fname.' '.$this->name.' '.$this->middlename;
     }
 }

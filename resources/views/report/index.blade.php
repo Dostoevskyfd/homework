@@ -1,31 +1,26 @@
 @extends('layouts.main')
 @section('contnet')
-<div class="md:container md:mx-auto  flex flex-wrap m-10 md:space-x-8 justify-between">
+
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{__('Список заявляний')}}
+        </h2>
+    </x-slot>
+
+  
+
+
+<div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div >
+        <div class="md:container md:mx-auto  flex flex-wrap m-10 md:space-x-8 justify-between">
 @foreach ($reports as $report)
 
-<div class="flex flex-wrap pt-5 ">
-   <div class="block max-w-sm p-6 bg-white border border-white-200 rounded-lg shadow hover:bg-white-100 ">
-   <div>
-   <p class=" "> 
-        <a href="{{route('report.index', $report->id )}}">
-            {{ $report->number }}
-        </a>
-   </div>
-    </p>
-    <p class=" ">{{ $report->description }}</p>
-    
-
-    <form action=" {{ route('reports.destroy', $report->id ) }} " method="POST">
-    @csrf 
-            @method('delete')
-            
-            <input type="submit" value="Удалить">
-        </form>
-   </div>
-
-   
-
-</div>
+<p>{{$report->created_at}}</p>
+<p>{{$report->number}}</p>
+<p>{{$report->description}}</p>
+<p>{{$report->name}}</p>
 
 @endforeach
 
@@ -48,4 +43,10 @@
     </form>
 </div>
 </div>
+        </div>
+    </div>
+</div>
+</x-app-layout>
+
+
 @endsection()
