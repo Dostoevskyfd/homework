@@ -1,21 +1,27 @@
-<h1>админ панелька</h1>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{__('Административная панель')}}
+        </h2>
+    </x-slot>
 
-<table>
-    <thead>
-        <tr>
-            <th>Номер заявления</th>
-            <th>Номер авто</th>
-            <th>Текст заявления</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach ($reports as $reports)
-    <tr>
-        <td> {{ $reports->id }}</td>
-        <td>{{ $reports->number }}</td>
-        <td>{{ $reports->description }}</td>
-    </tr> 
-    @endforeach
-    </tbody>
-</table>
+  
 
+
+<div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div >
+        <div class="md:container md:mx-auto  flex flex-wrap m-10 md:space-x-8 justify-between">
+        @foreach ($reports as $report)
+             
+            <p class="text-black">{{$report->number}}</p>
+            <p class="text-black">{{$report->description}}</p>
+            
+            
+           
+        @endforeach
+        </div>
+        </div>
+    </div>
+</div>
+</x-app-layout>

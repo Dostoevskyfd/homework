@@ -30,9 +30,13 @@ Route::post('/reports', [ReportController::class,'store']) -> name('report.store
 
 Route::get('/reports/{report}', [ReportController::class, 'show'])->name('report.show');
 Route::put('/reports/{report}', [ReportController::class,'update'])->name('report.update');
+
+
+Route::get('/create',[ReportController::class,'create'])->name('reports.create');
+Route::post('/store',[ReportController::class,'store'])->name('reports.store');
 });
 
 Route::middleware(Admin::class)->group(function(){
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');});
+    Route::get('/admin', [AdminController::class, 'store'])->name('admin.index');});
 
 require __DIR__.'/auth.php';
