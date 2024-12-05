@@ -16,11 +16,13 @@
         <div >
         <div class="md:container md:mx-auto  flex flex-wrap m-10 md:space-x-8 justify-between">
         @foreach ($reports as $report)
-        
+       
             <p class="text-black">{{$report->number}}</p>
             <p class="text-black">{{$report->description}}</p>
             <p class="text-black">{{$report->name}}</p>
-            
+            @isset($report->status->name)
+            <p class="text-black">{{$report->statuses->name}}</p>
+            @endisset()
            
         @endforeach
         </div>

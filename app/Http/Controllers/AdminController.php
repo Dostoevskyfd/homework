@@ -5,6 +5,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Report;
 use App\Models\Status;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -17,5 +18,12 @@ class AdminController extends Controller
             return redirect()->route('admin.index');
         }
         return redirect()->intended(route('dashboard', absolute: false));
+    }
+
+    
+    public function index(){
+        $reports= Report::all();
+
+        return view('admin.index', compact('reports'));
     }
 }

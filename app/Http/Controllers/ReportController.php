@@ -13,6 +13,7 @@ class ReportController extends Controller
     public function index(){
         $reports= Report::where('users_id', Auth::user()->id)
         ->get();
+   
         return view('report.index', compact('reports'));
     }
 

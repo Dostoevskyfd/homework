@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use App\Models\Reports;
+use App\Models\Report;
 
 class User extends Authenticatable
 {
@@ -57,10 +57,10 @@ class User extends Authenticatable
     }
     public function report():HasMany
     {
-        return $this->hasMany(Reports::class);
+        return $this->hasMany(Report::class);
     }
 
     public function fullName(){
-        return $this->fname.' '.$this->name.' '.$this->middlename;
+        return $this->name.' '.$this->middlename.' '.$this->fname;
     }
 }
