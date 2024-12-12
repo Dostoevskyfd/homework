@@ -5,11 +5,16 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Report;
 use App\Models\Status;
-use App\Models\User;
+use Illuminate\Http\LoginRequest;
+
 
 class AdminController extends Controller
 {
-    
+    public function index(){
+        $reports= Report::all();
+
+        return view('admin.index', compact('reports'));
+    }
 
     public function store(LoginRequest $request): RedirectResponse{
         $request->authenticate();
@@ -21,9 +26,5 @@ class AdminController extends Controller
     }
 
     
-    public function index(){
-        $reports= Report::all();
-
-        return view('admin.index', compact('reports'));
-    }
+    
 }

@@ -48,13 +48,14 @@ class ReportController extends Controller
         
       }  
   
-    public function update(Request $request, Report $report){
-        $data = $request -> validate([
-          'number' => 'integer',
-          'description' => 'string',
+    public function update(Request $request){
+        $request->validate([
+          'status_id'=>['required'],
+          'id'=>['required']
         ]);
-      
-        $report -> update($data);
+        Report::where('id',$request->id)->update([
+          'status_id'=>$request->status_id,
+        ]);
         return redirect()->back();
         
       }

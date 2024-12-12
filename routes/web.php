@@ -38,6 +38,7 @@ Route::post('/store',[ReportController::class,'store'])->name('reports.store');
 
 Route::middleware(Admin::class)->group(function(){
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::patch('/update', [ReportController::class, 'update'])->name('reports.update');
 });
 
 require __DIR__.'/auth.php';

@@ -10,14 +10,24 @@
 
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-
-          @foreach ($reports as $report)
-          <p class="text-black">{{\Carbon\Carbon::parse($report->created_at)-> translatedFormat('j F Y')}}</p>
-          <p class="text-black">{{$report->user->fullName()}}</p>
-          <p class="text-black">{{$report->number}}</p>
-            <p class="text-black">{{$report->name}}</p>
-            <p class="text-black">{{$report->description}}</p>
-            @if ($report->status_id==1)
+    <table >
+  <thead>
+    <tr class="bg-sky-400 text-white class="text-center"">
+      <th>Дата</th>
+      <th>ФИО подававлего</th>
+      <th>Номер автомобиля</th>
+      <th>Описание заявления</th>
+      <th>Статус</th>
+    </tr>
+  </thead>
+  <tbody class="">
+  @foreach ($reports as $report)
+    <tr class="bg-white pt-10">
+      <td><p class="text-black">{{\Carbon\Carbon::parse($report->created_at)-> translatedFormat('j F Y')}}</p></td>
+      <td><p class="text-black">{{$report->user->fullName()}}</p></td>
+      <td><p class="text-black">{{$report->number}}</p></td>
+      <td> <p class="text-black">{{$report->description}}</p></td>
+      <td>  @if ($report->status_id==1)
             <form id="form-update-{{$report->id}}" action="{{route('$reports.update')}}" method="POST">
                 @csrf
                 @method('PATCH')
@@ -30,10 +40,18 @@
             </form>
             @else
             <p>{{$report->status->name}}</p>
-            @endif
+            @endif</td>
+    </tr>
+    @endforeach
+  </tbody>
+
+</table>
+ 
             
            
-        @endforeach
+            
+           
+       
     </div>
 </div>
 </x-app-layout>
